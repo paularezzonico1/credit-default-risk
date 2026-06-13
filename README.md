@@ -80,8 +80,7 @@ credit-default-risk/
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/credit-default-risk.git
-cd credit-default-risk
+git clone https://github.com/paularezzonico1/credit-default-risk.git
 
 # Install dependencies
 pip install pandas numpy matplotlib seaborn scikit-learn xgboost jupyter
@@ -91,7 +90,7 @@ pip install pandas numpy matplotlib seaborn scikit-learn xgboost jupyter
 # Place cs-training.csv in data/
 
 # Launch notebook
-jupyter notebook notebooks/01_EDA.ipynb
+jupyter notebook "notebooks/Credit Default Risk Analysis.ipynb"
 ```
 
 ---
