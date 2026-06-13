@@ -25,7 +25,7 @@ credit-default-risk/
 ├── data/
 │   └── cs-training.csv          # Raw data (not tracked by git)
 ├── notebooks/
-│   └── 01_EDA.ipynb             # Full analysis: EDA → modeling → evaluation
+│   └── Credit Default Risk Analysis.ipynb  # Full analysis: EDA → modeling → evaluation
 ├── executive_summary.png        # Output chart for stakeholders
 └── README.md
 ```
