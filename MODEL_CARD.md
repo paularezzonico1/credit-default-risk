@@ -52,3 +52,30 @@ A gradient-boosted decision-tree model that estimates the probability a retail b
   (robust to the heavily right-skewed income distribution).
 - **Split:** time-ordered 80/20 (first 120k rows train, last 30k test) to mimic deployment — training
   on past loans and predicting future ones, avoiding look-ahead leakage.
+
+---
+
+## Evaluation
+
+**Hold-out test ROC-AUC (single 80/20 split)**
+
+| Model | Test ROC-AUC |
+|---|---|
+| Decision Tree (deep) | 0.613 |
+| Decision Tree (shallow) | 0.818 |
+| Logistic Regression (L1/L2) | 0.801 |
+| Random Forest | 0.844 |
+| MLP neural network (64, 32) | 0.844 |
+| XGBoost (default) | 0.864 |
+| **XGBoost (tuned, production)** | **0.871** |
+
+**5-fold stratified cross-validation (mean ± std AUC)**
+
+| Model | CV ROC-AUC |
+|---|---|
+| Logistic Regression | 0.790 ± 0.004 |
+| MLP (64, 32) | 0.834 ± 0.003 |
+| Random Forest | 0.839 ± 0.005 |
+| XGBoost | 0.858 ± 0.004 |
+
+The tight CV standard deviations (≤0.005) confirm the ranking is stable, not an artifact of one split.
