@@ -63,6 +63,11 @@ provides two independent methods:
 Both agree with the logistic-regression coefficients: **past delinquency** and **revolving
 utilization** dominate default risk.
 
+<p align="center">
+  <img src="images/shap_summary.png" width="55%"><br>
+  <img src="images/shap_waterfall.png" width="70%">
+</p>
+
 ---
 
 ## Macroeconomic Stress Testing
