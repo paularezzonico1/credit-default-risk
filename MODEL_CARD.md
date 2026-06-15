@@ -135,3 +135,15 @@ management:
 - Time-ordered split assumes the original row order is chronological; true origination dates are absent.
 - Extreme sentinel values in delinquency counts (e.g., 96/98) are left as-is.
 - Stress shocks are illustrative multipliers, not a calibrated macroeconomic model.
+
+---
+
+## Monitoring & Retraining
+- **Performance:** track rolling AUC, recall, and approval rate; alert on AUC drift > 0.02.
+- **Data drift:** monitor PSI on each input; investigate PSI > 0.2.
+- **Cadence:** scheduled retraining at least quarterly, or on a drift/performance breach.
+- **Governance:** version models and data, log every score with its SHAP reasons, and require
+  independent validation sign-off before any production change.
+
+## Maintainers
+Paula Rezzonico — model development, validation, and documentation.
