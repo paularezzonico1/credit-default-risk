@@ -96,3 +96,22 @@ credit-default-risk/
 ├── requirements.txt
 └── README.md
 ```
+
+---
+
+## Methodology
+
+**Phase 1 — EDA & Statistics.** Explored 150k borrowers; median-imputed missing income/dependents;
+t-tests confirmed age, delinquency, and income differ significantly between defaulters and non-defaulters.
+
+**Phase 2 — Unsupervised Segmentation.** K-Means (k=4 via elbow) found a high-risk cluster; the
+segment label became an engineered feature.
+
+**Phase 3 — Regularized Baseline.** Logistic Regression with L1/L2 (AUC ≈ 0.80); coefficients confirm
+past delinquency as the dominant signal.
+
+**Phase 4 — Model Progression & Bias-Variance.** Decision trees → Random Forest → **MLP neural
+network** → XGBoost, visualizing overfitting and how ensembling/boosting fixes it.
+
+**Phase 5 — Evaluation & Threshold Tuning.** ROC-AUC, precision/recall, and a business-driven 0.20
+threshold instead of the naive 0.50.
