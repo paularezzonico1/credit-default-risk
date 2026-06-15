@@ -118,3 +118,6 @@ if st.button("Calculate Default Risk", type="primary", use_container_width=True)
             )
         st.caption("SHAP values sum to the model's log-odds output. "
                    "Positive = pushes toward default.")
+
+st.divider()
+st.caption("Built with XGBoost + SHAP · For demonstration only — see MODEL_CARD.md for limitations.")
