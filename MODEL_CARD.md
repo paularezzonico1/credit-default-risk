@@ -116,3 +116,13 @@ management:
 - **LIME** — an independent local linear surrogate used as a second opinion per decision.
 - Both methods, and the logistic-regression coefficients, agree that **past delinquency** and
   **revolving utilization** are the dominant default drivers.
+
+---
+
+## Ethical Considerations & Fairness
+- The dataset contains no explicit protected attributes, but proxies (e.g., age, income) can encode
+  bias. **Age is a prohibited basis under ECOA** and is included here only for research; a production
+  model would require disparate-impact testing and likely its removal or constraint.
+- Median income imputation can systematically misstate risk for thin-file / low-income applicants.
+- Decisions affect access to credit; the model must stay decision-support with human review and a
+  documented adverse-action reason (the SHAP top factors provide this).
