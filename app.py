@@ -41,3 +41,11 @@ LABELS = {
     "NumberOfDependents": "Dependents",
     "cluster": "Borrower segment",
 }
+
+st.title("🏦 Credit Default Risk Scorer")
+st.markdown("Enter borrower details to get an instant, **explainable** default-probability score.")
+st.caption(
+    f"Model: tuned XGBoost · Hold-out AUC {meta['test_auc']:.3f} · "
+    f"Decision threshold {THRESHOLD:.2f} · Data: Give Me Some Credit (Kaggle)"
+)
+st.divider()
