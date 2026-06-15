@@ -9,3 +9,17 @@
 A gradient-boosted decision-tree model that estimates the probability a retail borrower becomes
 90+ days delinquent within two years, trained on the public *Give Me Some Credit* dataset
 (150,000 borrowers). The model is paired with SHAP/LIME explanations and a macroeconomic stress test.
+
+---
+
+## Model Details
+- **Architecture:** XGBoost gradient-boosted trees (`learning_rate=0.1`, `max_depth=3`,
+  `n_estimators=200`), selected by grid search under 3-fold CV.
+- **Inputs (11 features):** revolving utilization, age, debt ratio, monthly income, number of open
+  credit lines, real-estate loans, dependents, three delinquency counts (30-59 / 60-89 / 90+ days
+  past due), and a K-Means borrower-segment label engineered upstream.
+- **Output:** calibrated-ish probability of default in [0, 1]; a binary decision is produced by
+  thresholding at **0.20**.
+- **Feature scaling:** none for the production model — tree ensembles are scale-invariant, which also
+  keeps SHAP/LIME attributions in real borrower units.
+- **Frameworks:** scikit-learn 1.3, XGBoost 2.0, SHAP 0.46, LIME 0.2.
