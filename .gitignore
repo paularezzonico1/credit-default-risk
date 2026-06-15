@@ -1,1 +1,11 @@
+# Data (download separately from Kaggle)
 data/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Tooling / OS
+.streamlit/secrets.toml
+.DS_Store
