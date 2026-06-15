@@ -55,3 +55,15 @@ provides two independent methods:
 
 Both agree with the logistic-regression coefficients: **past delinquency** and **revolving
 utilization** dominate default risk.
+
+---
+
+## Macroeconomic Stress Testing
+The test portfolio is re-scored under adverse scenarios (income falls, utilization/debt rise,
+delinquencies climb). Expected loss assumes 65% LGD on a $10,000 exposure.
+
+| Scenario | Mean PD | Approval @0.20 | Expected loss / loan |
+|---|---|---|---|
+| Baseline | 6.6% | 91.7% | $431 |
+| Mild Recession | 8.1% | 89.1% | $525 |
+| Severe Recession | 44.4% | 0.4% | $2,889 |
