@@ -41,6 +41,8 @@ actually runs — from EDA to a governed, deployable scoring app.
 **5-fold cross-validation (mean ± std AUC):** Logistic 0.790 ± 0.004 · MLP 0.834 ± 0.003 ·
 Random Forest 0.839 ± 0.005 · **XGBoost 0.858 ± 0.004**.
 
+![Cross-validated model performance](images/cv_performance.png)
+
 **Final model:** tuned XGBoost at threshold **0.20** (recall ≈ 51%), optimized for the lending cost
 asymmetry — a missed default costs far more than a false alarm.
 
