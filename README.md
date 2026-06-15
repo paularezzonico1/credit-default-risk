@@ -80,6 +80,8 @@ delinquencies climb). Expected loss assumes 65% LGD on a $10,000 exposure.
 | Mild Recession | 8.1% | 89.1% | $525 |
 | Severe Recession | 44.4% | 0.4% | $2,889 |
 
+![Stress test scenarios](images/stress_test.png)
+
 ---
 
 ## Live Scoring Dashboard
