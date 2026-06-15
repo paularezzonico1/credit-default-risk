@@ -26,6 +26,11 @@ actually runs — from EDA to a governed, deployable scoring app.
 
 ## Results
 
+<p align="center">
+  <img src="images/confusion_matrix.png" width="48%">
+  <img src="images/roc_curve.png" width="48%">
+</p>
+
 **Hold-out test ROC-AUC**
 
 | Model | Test ROC-AUC |
