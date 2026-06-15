@@ -126,3 +126,12 @@ management:
 - Median income imputation can systematically misstate risk for thin-file / low-income applicants.
 - Decisions affect access to credit; the model must stay decision-support with human review and a
   documented adverse-action reason (the SHAP top factors provide this).
+
+---
+
+## Limitations
+- Trained on a single, dated, US-consumer competition dataset — limited external validity.
+- Probabilities are not formally calibrated (no Platt/isotonic step); treat as risk ranks.
+- Time-ordered split assumes the original row order is chronological; true origination dates are absent.
+- Extreme sentinel values in delinquency counts (e.g., 96/98) are left as-is.
+- Stress shocks are illustrative multipliers, not a calibrated macroeconomic model.
