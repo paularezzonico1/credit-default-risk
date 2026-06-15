@@ -104,3 +104,17 @@ if st.button("Calculate Default Risk", type="primary", use_container_width=True)
         fig = plt.gcf()
         fig.set_size_inches(8, 5)
         st.pyplot(fig, clear_figure=True)
+    with right:
+        st.subheader("Top 3 risk factors")
+        contributions = sorted(zip(features, shap_row.values[0]), key=lambda x: -x[1])
+        for feat, val in contributions[:3]:
+            direction = "toward default" if val >= 0 else "away from default"
+            color = "#c0392b" if val >= 0 else "#27ae60"
+            arrow = "▲" if val >= 0 else "▼"
+            st.markdown(
+                f"**{LABELS.get(feat, feat)}**  \n"
+                f"<span style='color:{color}'>{arrow} {val:+.3f} {direction}</span>",
+                unsafe_allow_html=True,
+            )
+        st.caption("SHAP values sum to the model's log-odds output. "
+                   "Positive = pushes toward default.")
