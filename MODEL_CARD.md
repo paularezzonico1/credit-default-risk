@@ -42,3 +42,13 @@ A gradient-boosted decision-tree model that estimates the probability a retail b
   proxies as inputs — doing so would violate ECOA / Reg B.
 - The training data is a static 2011 competition dataset; the model is **not** fit for live
   production use without retraining on current, representative, and governed data.
+
+---
+
+## Training Data
+- **Source:** Kaggle *Give Me Some Credit* (`cs-training.csv`), 150,000 borrowers, 11 features.
+- **Target:** `SeriousDlqin2yrs` — 90+ days past due within 2 years. **Class balance: 6.7% positive.**
+- **Missing data:** `MonthlyIncome` (~20%) and `NumberOfDependents` (~2.6%) imputed with the median
+  (robust to the heavily right-skewed income distribution).
+- **Split:** time-ordered 80/20 (first 120k rows train, last 30k test) to mimic deployment — training
+  on past loans and predicting future ones, avoiding look-ahead leakage.
