@@ -14,3 +14,9 @@ lime==0.2.0.1
 # ── Visualization ──────────────────────────────────────
 matplotlib==3.7.2
 seaborn==0.12.2
+
+# ── App, notebook & utilities ──────────────────────────
+streamlit==1.43.1
+joblib==1.2.0
+threadpoolctl>=3.2.0
+jupyter
