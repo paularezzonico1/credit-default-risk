@@ -49,3 +49,19 @@ st.caption(
     f"Decision threshold {THRESHOLD:.2f} · Data: Give Me Some Credit (Kaggle)"
 )
 st.divider()
+
+col1, col2 = st.columns(2)
+with col1:
+    age = st.number_input("Age", 18, 100, 45)
+    monthly_income = st.number_input("Monthly Income ($)", 0, 500000, 5400)
+    debt_ratio = st.number_input("Debt Ratio", 0.0, 10.0, 0.37)
+    revolving_util = st.number_input("Revolving Credit Utilization", 0.0, 2.0, 0.15)
+    num_dependents = st.number_input("Number of Dependents", 0, 20, 0)
+with col2:
+    late_30_59 = st.number_input("Times 30-59 Days Late", 0, 98, 0)
+    late_60_89 = st.number_input("Times 60-89 Days Late", 0, 98, 0)
+    late_90 = st.number_input("Times 90+ Days Late", 0, 98, 0)
+    open_credit_lines = st.number_input("Open Credit Lines", 0, 58, 8)
+    real_estate_loans = st.number_input("Real Estate Loans", 0, 54, 1)
+
+st.divider()
