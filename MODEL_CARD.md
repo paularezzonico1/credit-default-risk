@@ -32,3 +32,13 @@ A gradient-boosted decision-tree model that estimates the probability a retail b
 - **Intended users:** bank credit-risk and model-validation teams.
 - **Decision flow:** scores below 0.20 → *approve*, 0.20-0.40 → *manual review*, above 0.40 →
   *decline*. The model augments, and never replaces, human adjudication.
+
+---
+
+## Out-of-Scope & Prohibited Uses
+- Not for fully automated, human-out-of-the-loop credit denial.
+- Not validated for commercial, mortgage, or non-US-consumer lending.
+- Must not use prohibited-basis attributes (race, sex, religion, national origin, etc.) or close
+  proxies as inputs — doing so would violate ECOA / Reg B.
+- The training data is a static 2011 competition dataset; the model is **not** fit for live
+  production use without retraining on current, representative, and governed data.
