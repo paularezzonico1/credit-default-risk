@@ -93,3 +93,14 @@ if st.button("Calculate Default Risk", type="primary", use_container_width=True)
     c2.metric("Risk Level", risk)
     c3.metric("Recommendation", rec)
     st.progress(min(prob, 1.0))
+
+    # SHAP explanation for this single decision
+    shap_row = explainer(borrower)
+    st.divider()
+    left, right = st.columns([3, 2])
+    with left:
+        st.subheader("Why this score? (SHAP waterfall)")
+        shap.plots.waterfall(shap_row[0], max_display=8, show=False)
+        fig = plt.gcf()
+        fig.set_size_inches(8, 5)
+        st.pyplot(fig, clear_figure=True)
