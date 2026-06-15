@@ -80,3 +80,19 @@ delinquencies climb). Expected loss assumes 65% LGD on a $10,000 exposure.
 streamlit run app.py
 ```
 The app loads artifacts from `models/` and never retrains on a click.
+
+---
+
+## Project Structure
+```
+credit-default-risk/
+├── data/                         # cs-training.csv (download from Kaggle; git-ignored)
+├── models/                       # serialized artifacts: scaler, kmeans, xgb_model, metadata
+├── notebooks/
+│   └── Credit Default Risk Analysis.ipynb   # full 11-phase analysis with embedded outputs
+├── app.py                        # Streamlit scoring + SHAP explanation dashboard
+├── executive_summary.png         # stakeholder summary chart
+├── MODEL_CARD.md                 # model governance documentation
+├── requirements.txt
+└── README.md
+```
