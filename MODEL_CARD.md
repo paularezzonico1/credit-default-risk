@@ -105,3 +105,14 @@ utilization/debt, higher delinquency). Expected loss assumes 65% LGD on a $10,00
 
 The sharp, non-linear deterioration under severe stress is the early-warning behaviour a risk
 committee uses to size capital buffers and tighten underwriting.
+
+---
+
+## Explainability
+Every prediction is explainable, supporting ECOA adverse-action requirements and SR 11-7 model risk
+management:
+- **SHAP** (`TreeExplainer`) — global feature importance and per-borrower waterfall attributions whose
+  contributions provably sum to the prediction.
+- **LIME** — an independent local linear surrogate used as a second opinion per decision.
+- Both methods, and the logistic-regression coefficients, agree that **past delinquency** and
+  **revolving utilization** are the dominant default drivers.
