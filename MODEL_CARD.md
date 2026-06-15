@@ -23,3 +23,12 @@ A gradient-boosted decision-tree model that estimates the probability a retail b
 - **Feature scaling:** none for the production model — tree ensembles are scale-invariant, which also
   keeps SHAP/LIME attributions in real borrower units.
 - **Frameworks:** scikit-learn 1.3, XGBoost 2.0, SHAP 0.46, LIME 0.2.
+
+---
+
+## Intended Use
+- **Primary use:** decision-support for a retail-credit risk analyst — ranking and triaging consumer
+  loan applications, and portfolio-level what-if / stress analysis.
+- **Intended users:** bank credit-risk and model-validation teams.
+- **Decision flow:** scores below 0.20 → *approve*, 0.20-0.40 → *manual review*, above 0.40 →
+  *decline*. The model augments, and never replaces, human adjudication.
