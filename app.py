@@ -26,3 +26,18 @@ cluster_scaler, kmeans, model, meta, explainer = load_artifacts()
 features = meta["features"]
 cluster_features = meta["cluster_features"]
 THRESHOLD = meta["threshold"]
+
+# Human-readable labels for the model's raw feature names
+LABELS = {
+    "RevolvingUtilizationOfUnsecuredLines": "Revolving credit utilization",
+    "age": "Age",
+    "NumberOfTime30-59DaysPastDueNotWorse": "30-59 days late (count)",
+    "DebtRatio": "Debt ratio",
+    "MonthlyIncome": "Monthly income",
+    "NumberOfOpenCreditLinesAndLoans": "Open credit lines",
+    "NumberOfTimes90DaysLate": "90+ days late (count)",
+    "NumberRealEstateLoansOrLines": "Real estate loans",
+    "NumberOfTime60-89DaysPastDueNotWorse": "60-89 days late (count)",
+    "NumberOfDependents": "Dependents",
+    "cluster": "Borrower segment",
+}
