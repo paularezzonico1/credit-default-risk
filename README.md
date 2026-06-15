@@ -153,3 +153,17 @@ jupyter nbconvert --to notebook --execute --inplace "notebooks/Credit Default Ri
 # Launch the scoring dashboard
 streamlit run app.py
 ```
+
+---
+
+## Key Talking Points
+1. **Leakage prevention** — a time-ordered split mirrors deployment; a random split would leak future
+   loans into training and inflate performance.
+2. **Why not accuracy?** — on a 93/7 target, "always predict no default" is 93% accurate and useless;
+   AUC, recall, and threshold tuning are the right tools.
+3. **Threshold as a business decision** — 0.20 reflects the asymmetric cost of a missed default vs a
+   false alarm, not a statistical default.
+4. **Explainability is non-negotiable in lending** — SHAP/LIME give an auditable reason for every
+   decision, satisfying ECOA adverse-action and SR 11-7 expectations.
+5. **Stress testing** — the model degrades sharply but sensibly under a severe recession, exactly the
+   early-warning signal a risk committee needs.
