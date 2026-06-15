@@ -115,3 +115,19 @@ network** → XGBoost, visualizing overfitting and how ensembling/boosting fixes
 
 **Phase 5 — Evaluation & Threshold Tuning.** ROC-AUC, precision/recall, and a business-driven 0.20
 threshold instead of the naive 0.50.
+
+**Phase 6 — Cross-Validation & Tuning.** 5-fold stratified CV for robust mean ± std AUC, then
+`GridSearchCV` to tune XGBoost (best: `lr=0.1, depth=3, 200 trees`).
+
+**Phase 7 — Evaluation Visuals.** Confusion matrix (raw + normalized), ROC curve vs baseline, and
+gain + permutation feature importance.
+
+**Phase 8 — SHAP.** Global and local explanations via `TreeExplainer`.
+
+**Phase 9 — LIME.** Model-agnostic local explanations and a SHAP-vs-LIME comparison.
+
+**Phase 10 — Stress Testing.** Three macro scenarios with predicted default rate, approval rate, and
+expected loss.
+
+**Phase 11 — Productionization.** Serialize artifacts with `joblib` for the Streamlit app; verify the
+reloaded model reproduces the test AUC exactly.
