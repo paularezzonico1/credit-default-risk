@@ -43,3 +43,15 @@ Random Forest 0.839 ± 0.005 · **XGBoost 0.858 ± 0.004**.
 
 **Final model:** tuned XGBoost at threshold **0.20** (recall ≈ 51%), optimized for the lending cost
 asymmetry — a missed default costs far more than a false alarm.
+
+---
+
+## Explainability (SHAP + LIME)
+Banking regulation (SR 11-7, ECOA / Reg B) requires lenders to explain credit decisions. This project
+provides two independent methods:
+- **SHAP** — global beeswarm/bar importance plus per-borrower waterfall plots whose contributions
+  provably sum to the prediction.
+- **LIME** — a local linear surrogate as a second opinion on the same borrower.
+
+Both agree with the logistic-regression coefficients: **past delinquency** and **revolving
+utilization** dominate default risk.
