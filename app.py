@@ -65,3 +65,31 @@ with col2:
     real_estate_loans = st.number_input("Real Estate Loans", 0, 54, 1)
 
 st.divider()
+
+if st.button("Calculate Default Risk", type="primary", use_container_width=True):
+    # Assign the borrower to a K-Means risk segment, then score in training feature order.
+    cluster_row = pd.DataFrame(
+        [[revolving_util, age, monthly_income, debt_ratio, late_90]],
+        columns=cluster_features,
+    )
+    cluster = int(kmeans.predict(cluster_scaler.transform(cluster_row))[0])
+
+    borrower = pd.DataFrame(
+        [[revolving_util, age, late_30_59, debt_ratio, monthly_income,
+          open_credit_lines, late_90, real_estate_loans, late_60_89,
+          num_dependents, cluster]],
+        columns=features,
+    )
+    prob = float(model.predict_proba(borrower)[0][1])
+
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Default Probability", f"{prob:.1%}")
+    if prob < THRESHOLD:
+        risk, rec = "🟢 LOW RISK", "APPROVE"
+    elif prob < 0.40:
+        risk, rec = "🟡 MEDIUM RISK", "REVIEW"
+    else:
+        risk, rec = "🔴 HIGH RISK", "DECLINE"
+    c2.metric("Risk Level", risk)
+    c3.metric("Recommendation", rec)
+    st.progress(min(prob, 1.0))
