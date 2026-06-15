@@ -79,3 +79,14 @@ A gradient-boosted decision-tree model that estimates the probability a retail b
 | XGBoost | 0.858 ± 0.004 |
 
 The tight CV standard deviations (≤0.005) confirm the ranking is stable, not an artifact of one split.
+
+---
+
+## Operating Point (threshold = 0.20)
+Accuracy is meaningless on a 93/7 imbalanced target (predicting "no default" always scores 93%).
+The threshold is a **business decision** driven by cost asymmetry: a missed default loses the loan
+principal, while a false alarm only forgoes interest. At 0.20 on the 30,000-loan test set:
+
+- **Recall (defaulters caught): 51.1%** — 1,044 of 2,044 true defaulters flagged.
+- **Precision: 42.0%** — 1,440 false alarms among 27,956 good borrowers.
+- This deliberately trades precision for recall, consistent with lending loss economics.
