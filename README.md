@@ -134,6 +134,9 @@ threshold instead of the naive 0.50.
 `GridSearchCV` to tune XGBoost (best: `lr=0.1, depth=3, 200 trees`).
 
 **Phase 7 — Evaluation Visuals.** Confusion matrix (raw + normalized), ROC curve vs baseline, and
+
+
+![Feature importance](images/feature_importance.png)
 gain + permutation feature importance.
 
 **Phase 8 — SHAP.** Global and local explanations via `TreeExplainer`.
