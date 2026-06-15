@@ -90,3 +90,18 @@ principal, while a false alarm only forgoes interest. At 0.20 on the 30,000-loan
 - **Recall (defaulters caught): 51.1%** — 1,044 of 2,044 true defaulters flagged.
 - **Precision: 42.0%** — 1,440 false alarms among 27,956 good borrowers.
 - This deliberately trades precision for recall, consistent with lending loss economics.
+
+---
+
+## Stress Testing
+The test portfolio was re-scored under three macroeconomic scenarios (income shocks, rising
+utilization/debt, higher delinquency). Expected loss assumes 65% LGD on a $10,000 exposure.
+
+| Scenario | Mean predicted PD | Approval rate @0.20 | Expected loss / loan |
+|---|---|---|---|
+| Baseline | 6.6% | 91.7% | $431 |
+| Mild Recession | 8.1% | 89.1% | $525 |
+| Severe Recession | 44.4% | 0.4% | $2,889 |
+
+The sharp, non-linear deterioration under severe stress is the early-warning behaviour a risk
+committee uses to size capital buffers and tighten underwriting.
