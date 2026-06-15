@@ -67,3 +67,16 @@ delinquencies climb). Expected loss assumes 65% LGD on a $10,000 exposure.
 | Baseline | 6.6% | 91.7% | $431 |
 | Mild Recession | 8.1% | 89.1% | $525 |
 | Severe Recession | 44.4% | 0.4% | $2,889 |
+
+---
+
+## Live Scoring Dashboard
+`app.py` is a Streamlit app that loads the serialized model and, for any borrower, returns:
+1. a **default probability** and approve / review / decline recommendation,
+2. a **SHAP waterfall** explaining the score, and
+3. the **top 3 risk factors** driving the decision.
+
+```bash
+streamlit run app.py
+```
+The app loads artifacts from `models/` and never retrains on a click.
