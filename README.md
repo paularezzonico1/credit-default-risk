@@ -131,3 +131,25 @@ expected loss.
 
 **Phase 11 — Productionization.** Serialize artifacts with `joblib` for the Streamlit app; verify the
 reloaded model reproduces the test AUC exactly.
+
+---
+
+## Setup
+
+```bash
+# Clone
+git clone https://github.com/paularezzonico1/credit-default-risk.git
+cd credit-default-risk
+
+# Install pinned dependencies
+pip install -r requirements.txt
+
+# Download data from Kaggle and place cs-training.csv in data/
+# https://www.kaggle.com/c/GiveMeSomeCredit/data
+
+# Reproduce the full analysis (regenerates models/ artifacts)
+jupyter nbconvert --to notebook --execute --inplace "notebooks/Credit Default Risk Analysis.ipynb"
+
+# Launch the scoring dashboard
+streamlit run app.py
+```
