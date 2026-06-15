@@ -10,3 +10,14 @@ actually runs — from EDA to a governed, deployable scoring app.
 ![XGBoost](https://img.shields.io/badge/XGBoost-2.0-green)
 ![SHAP](https://img.shields.io/badge/SHAP-explainable-purple)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
+---
+
+## Why this project stands out
+- **11-stage pipeline:** EDA → segmentation → regularized baseline → model bake-off (incl. a neural
+  network) → cross-validation & tuning → evaluation visuals → SHAP → LIME → stress testing → productionization.
+- **Rigorous validation:** 5-fold stratified cross-validation with mean ± std, not a single lucky split.
+- **Fully explainable:** SHAP waterfalls and LIME explanations for every decision — audit-ready.
+- **Stress-tested:** the portfolio is re-scored under three macroeconomic scenarios (CCAR-style).
+- **Deployable:** a Streamlit app loads serialized artifacts and returns an instant, explained score.
+- **Governed:** a complete [model card](MODEL_CARD.md) documents intended use, fairness, and limitations.
