@@ -22,6 +22,14 @@ def load_artifacts():
     return cluster_scaler, kmeans, model, meta, explainer
 
 
+if not os.path.exists(os.path.join(MODELS_DIR, "xgb_model.joblib")):
+    st.error(
+        "Model artifacts not found in `models/`. Run the notebook's Phase 11 cell first:\n\n"
+        "`jupyter nbconvert --to notebook --execute --inplace "
+        "\"notebooks/Credit Default Risk Analysis.ipynb\"`"
+    )
+    st.stop()
+
 cluster_scaler, kmeans, model, meta, explainer = load_artifacts()
 features = meta["features"]
 cluster_features = meta["cluster_features"]
