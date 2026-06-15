@@ -167,3 +167,16 @@ streamlit run app.py
    decision, satisfying ECOA adverse-action and SR 11-7 expectations.
 5. **Stress testing** — the model degrades sharply but sensibly under a severe recession, exactly the
    early-warning signal a risk committee needs.
+
+---
+
+## Tech Stack
+`Python` · `pandas` · `NumPy` · `scikit-learn` · `XGBoost` · `SHAP` · `LIME` · `matplotlib` ·
+`seaborn` · `SciPy` · `Streamlit` · `Jupyter`
+
+## License
+MIT — see [LICENSE](LICENSE). Educational/demonstration project; see [MODEL_CARD.md](MODEL_CARD.md)
+for intended use and limitations.
+
+---
+*Author: Paula Rezzonico*
