@@ -104,6 +104,8 @@ credit-default-risk/
 ├── models/                       # serialized artifacts: scaler, kmeans, xgb_model, metadata
 ├── notebooks/
 │   └── Credit Default Risk Analysis.ipynb   # full 11-phase analysis with embedded outputs
+├── train_model.py                # standalone training pipeline → models/ artifacts
+├── stress_test.py                # macroeconomic stress-testing script
 ├── app.py                        # Streamlit scoring + SHAP explanation dashboard
 ├── executive_summary.png         # stakeholder summary chart
 ├── MODEL_CARD.md                 # model governance documentation
@@ -163,8 +165,13 @@ pip install -r requirements.txt
 # Download data from Kaggle and place cs-training.csv in data/
 # https://www.kaggle.com/c/GiveMeSomeCredit/data
 
-# Reproduce the full analysis (regenerates models/ artifacts)
+# Regenerate the models/ artifacts — either run the standalone pipeline…
+python train_model.py
+# …or reproduce the full narrative analysis in the notebook
 jupyter nbconvert --to notebook --execute --inplace "notebooks/Credit Default Risk Analysis.ipynb"
+
+# (Optional) re-run the macroeconomic stress test
+python stress_test.py
 
 # Launch the scoring dashboard
 streamlit run app.py
