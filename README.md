@@ -1,18 +1,18 @@
 # 🏦 Credit Default Risk Predictor
 
 I started this project because I genuinely wanted to understand how a bank actually decides whether
-to lend to someone — not the textbook version, but the messy, end-to-end reality of it. I kept
+to lend to someone. Not the textbook version, but the messy, end-to-end reality of it. I kept
 reading about credit scoring, fairness, and "explainable AI" in lending, and I figured the only way
 to really get it was to build the whole thing myself and see what the numbers told me. So I picked a
 real dataset, gave myself no shortcuts, and worked through every stage I'd want a real risk team to
-care about. A lot of what's here came from following my own curiosity down rabbit holes — why a 0.20
-threshold instead of 0.50, why accuracy is a trap on imbalanced data, what a model really does when
-the economy turns. This repo is the result, and honestly I learned more from the parts that didn't
-work the first time than the ones that did.
+care about. A lot of what's here came from following my own curiosity: why a 0.20 threshold instead
+of 0.50, why accuracy is a trap on imbalanced data, what a model really does when the economy turns.
+This repo is the result, and honestly I learned more from the parts that didn't work the first time
+than the ones that did.
 
 What it is: an end-to-end, **explainable**, and **stress-tested** machine-learning system that
 predicts retail loan default on the [Give Me Some Credit](https://www.kaggle.com/c/GiveMeSomeCredit)
-dataset (150,000 borrowers) — from EDA all the way to a governed, deployable scoring app.
+dataset (150,000 borrowers), covering EDA all the way to a governed, deployable scoring app.
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3-orange)
