@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+- Added `docs/requirements.md`: a formal business and functional requirements document
+  (BRD/FRD) with numbered traceable requirements, acceptance criteria, a requirements
+  traceability matrix, and a sign-off/RACI table.
+
 ## 1.0 — 2026-06-14
 - Added 5-fold cross-validation and `GridSearchCV` hyperparameter tuning.
 - Added an MLP neural network to the model bake-off.
